@@ -1,0 +1,23 @@
+{
+    "name": "belsignum/container-background",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "homepage": "https://www.belsignum.com",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "typo3/cms-core": "^12.1.0",
+        "b13/container": "^2.2.0 || dev-master",
+        "buepro/typo3-container-elements": "^5.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Belsignum\\ContainerBackground\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "container_background"
+        }
+    }
+}

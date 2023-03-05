@@ -1,0 +1,9 @@
+.parallax {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.parallax-fixed {
+    background-attachment: fixed;
+  }
+}

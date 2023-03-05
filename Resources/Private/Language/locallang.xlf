@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-03-03T11:47:39Z"
+		  product-name="container_background">
+		<header/>
+		<body>
+			<trans-unit id="background.tab.name">
+				<source>Container Background</source>
+			</trans-unit>
+			<trans-unit id="background.tab.background">
+				<source>Background File Resource</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

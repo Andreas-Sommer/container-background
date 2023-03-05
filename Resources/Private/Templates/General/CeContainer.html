@@ -1,0 +1,66 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:if condition="{data.pi_flexform.wrapSection} == '1'">
+        <f:then>
+            <div class="section section-default{f:if(condition: data.pi_flexform.sectionClass, then: ' {data.pi_flexform.sectionClass}')}">
+                <f:render section="renderContent" arguments="{_all}"/>
+            </div>
+        </f:then>
+        <f:else>
+            <f:render section="renderContent" arguments="{_all}"/>
+        </f:else>
+    </f:if>
+</f:section>
+<f:section name="renderContent">
+    {f:variable(name: 'css', value: ' {data.pi_flexform.containerClass}') -> f:if(condition:
+    data.pi_flexform.containerClass)}
+    {f:variable(name: 'css', value: '{css} container-fluid') -> f:if(condition: '{data.pi_flexform.isContainerFluid} ==
+    "1"')}
+    <div {data.pi_flexform.containerAttribute -> f:format.htmlentitiesDecode()}
+        <f:if condition="{cbContainerBackground.0} && {settings.media.background.dimension.width.1} && {settings.media.background.dimension.width.1}">
+            {f:variable(name: 'cbImage-1', value: '{f:uri.image(image: cbContainerBackground.0, width:
+            settings.media.background.dimension.width.1)}')}
+            {f:variable(name: 'cbDimension-1', value: '{settings.media.background.dimension.width.1}')}
+            <f:if condition="{settings.media.background.dimension.width.2} && {settings.media.background.dimension.width.2}">
+                {f:variable(name: 'cbImage-2', value: ', {f:uri.image(image: cbContainerBackground.0, width:
+                settings.media.background.dimension.width.2)}')}
+                {f:variable(name: 'cbDimension-2', value: ', {settings.media.background.dimension.width.2}')}
+            </f:if>
+            <f:if condition="{settings.media.background.dimension.width.3} && {settings.media.background.dimension.width.3}">
+                {f:variable(name: 'cbImage-3', value: ', {f:uri.image(image: cbContainerBackground.0, width:
+                settings.media.background.dimension.width.3)}')}
+                {f:variable(name: 'cbDimension-3', value: ', {settings.media.background.dimension.width.3}')}
+            </f:if>
+            <f:if condition="{settings.media.background.dimension.width.4} && {settings.media.background.dimension.width.4}">
+                {f:variable(name: 'cbImage-4', value: ', {f:uri.image(image: cbContainerBackground.0, width:
+                settings.media.background.dimension.width.4)}')}
+                {f:variable(name: 'cbDimension-4', value: ', {settings.media.background.dimension.width.4}')}
+            </f:if>
+            <f:if condition="{settings.media.background.dimension.width.5} && {settings.media.background.dimension.width.5}">
+                {f:variable(name: 'cbImage-5', value: ', {f:uri.image(image: cbContainerBackground.0, width:
+                settings.media.background.dimension.width.5)}')}
+                {f:variable(name: 'cbDimension-5', value: ', {settings.media.background.dimension.width.5}')}
+            </f:if>
+            {f:variable(
+            name: 'cbImageSet',
+            value: '{cbImage-1}{cbImage-2}{cbImage-3}{cbImage-4}{cbImage-5}'
+            )}
+            {f:variable(
+            name: 'cbDimensions',
+            value: '{cbDimension-1}{cbDimension-2}{cbDimension-3}{cbDimension-4}{cbDimension-5}'
+            )}
+            data-cb-image="{f:uri.image(image: cbContainerBackground.0)}" data-cb-image-set="{cbImageSet}"
+            data-cb-dimensions="{cbDimensions}"
+
+            {f:variable(name: 'css', value: '{css} parallax parallax-fixed')}
+        </f:if>
+        class="ce-container{css}">
+        <f:for each="{children_101}" as="record">
+            {f:cObject(typoscriptObjectPath: 'lib.containerElements.renderContent', data: record)}
+        </f:for>
+    </div>
+</f:section>
+</html>

@@ -1,0 +1,39 @@
+#=========================================================#
+# Content elements
+#=========================================================#
+
+lib.contentElement {
+    templateRootPaths {
+        5 = EXT:container_background/Resources/Private/Templates/General
+    }
+    partialRootPaths {
+        5 = EXT:container_background/Resources/Private/Partials/General
+    }
+    settings.media.background {
+        density {
+            1 = {$plugin.tx_container_background.settings.media.background.density.1}
+            2 = {$plugin.tx_container_background.settings.media.background.density.2}
+            3 = {$plugin.tx_container_background.settings.media.background.density.3}
+        }
+        dimension.width {
+            1 = {$plugin.tx_container_background.settings.media.background.dimension.width.1}
+            2 = {$plugin.tx_container_background.settings.media.background.dimension.width.2}
+            3 = {$plugin.tx_container_background.settings.media.background.dimension.width.3}
+        }
+    }
+}
+
+tt_content.ce_container.dataProcessing {
+    1677841441 = Buepro\ContainerElements\DataProcessing\CardImageProcessor
+    1677841441 {
+        references.fieldName = flexform_imageReference
+        as = cbContainerBackground
+    }
+}
+
+[{$plugin.tx_container_background.settings.use.javaScript} > 0]
+    page.includeJSFooter.container-background = EXT:container_background/Resources/Public/JavaScript/script.js
+[end]
+[{$plugin.tx_container_background.settings.use.css} > 0]
+    page.includeCSS.container-background = EXT:container_background/Resources/Public/Css/style.css
+[end]

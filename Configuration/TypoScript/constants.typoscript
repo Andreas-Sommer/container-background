@@ -1,0 +1,15 @@
+plugin.tx_container_background.settings {
+    use.javaScript = 1
+    media.background {
+        density {
+            1 = 1x
+            2 = 2x
+            2 = 3x
+        }
+        dimension.width {
+            1 = 1280w
+            2 = 1920w
+            3 = 2560w
+        }
+    }
+}
