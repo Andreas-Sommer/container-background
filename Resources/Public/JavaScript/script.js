@@ -14,7 +14,8 @@ function containerBackground() {
         let img = item.dataset.cbImage;
         let srcs = item.dataset.cbImageSet.split(/,\s|,/);
         let dimensions = item.dataset.cbDimensions.split(/,\s|,/);
-        let style = item.getAttribute('style').replace(/;$/, '') + ';';
+        let style = item.getAttribute('style') ? item.getAttribute('style') : '';
+        style = style.replace(/;$/, '') + ';';
         style += 'background-image: url("' + img + '");';
         style += 'background-image: -webkit-image-set( ';
         style += generateImageSetStr(srcs);
