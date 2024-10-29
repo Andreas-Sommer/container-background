@@ -22,26 +22,26 @@
     <div {data.pi_flexform.containerAttribute -> f:format.htmlentitiesDecode()}
         <f:if condition="{cbContainerBackground.0} && {settings.media.background.dimension.width.1} && {settings.media.background.dimension.width.1}">
             {f:variable(name: 'cbImage-1', value: '{f:uri.image(image: cbContainerBackground.0, width:
-            settings.media.background.dimension.width.1)}')}
+            settings.media.background.dimension.width.1, fileExtension: \'webp\')}')}
             {f:variable(name: 'cbDimension-1', value: '{settings.media.background.dimension.width.1}')}
             <f:if condition="{settings.media.background.dimension.width.2} && {settings.media.background.dimension.width.2}">
                 {f:variable(name: 'cbImage-2', value: ', {f:uri.image(image: cbContainerBackground.0, width:
-                settings.media.background.dimension.width.2)}')}
+                settings.media.background.dimension.width.2, fileExtension: \'webp\')}')}
                 {f:variable(name: 'cbDimension-2', value: ', {settings.media.background.dimension.width.2}')}
             </f:if>
             <f:if condition="{settings.media.background.dimension.width.3} && {settings.media.background.dimension.width.3}">
                 {f:variable(name: 'cbImage-3', value: ', {f:uri.image(image: cbContainerBackground.0, width:
-                settings.media.background.dimension.width.3)}')}
+                settings.media.background.dimension.width.3, fileExtension: \'webp\')}')}
                 {f:variable(name: 'cbDimension-3', value: ', {settings.media.background.dimension.width.3}')}
             </f:if>
             <f:if condition="{settings.media.background.dimension.width.4} && {settings.media.background.dimension.width.4}">
                 {f:variable(name: 'cbImage-4', value: ', {f:uri.image(image: cbContainerBackground.0, width:
-                settings.media.background.dimension.width.4)}')}
+                settings.media.background.dimension.width.4, fileExtension: \'webp\')}')}
                 {f:variable(name: 'cbDimension-4', value: ', {settings.media.background.dimension.width.4}')}
             </f:if>
             <f:if condition="{settings.media.background.dimension.width.5} && {settings.media.background.dimension.width.5}">
                 {f:variable(name: 'cbImage-5', value: ', {f:uri.image(image: cbContainerBackground.0, width:
-                settings.media.background.dimension.width.5)}')}
+                settings.media.background.dimension.width.5, fileExtension: \'webp\')}')}
                 {f:variable(name: 'cbDimension-5', value: ', {settings.media.background.dimension.width.5}')}
             </f:if>
             {f:variable(
@@ -52,7 +52,7 @@
             name: 'cbDimensions',
             value: '{cbDimension-1}{cbDimension-2}{cbDimension-3}{cbDimension-4}{cbDimension-5}'
             )}
-            data-cb-image="{f:uri.image(image: cbContainerBackground.0)}" data-cb-image-set="{cbImageSet}"
+            data-cb-image="{f:uri.image(image: cbContainerBackground.0, fileExtension: 'webp')}" data-cb-image-set="{cbImageSet}"
             data-cb-dimensions="{cbDimensions}"
 
             {f:variable(name: 'css', value: '{css} parallax parallax-fixed')}
