@@ -6,3 +6,9 @@
 .parallax.parallax-fixed {
     background-attachment: fixed;
 }
+
+@supports (-webkit-touch-callout: none) {
+    .parallax.parallax-fixed {
+        background-attachment: scroll;
+    }
+}

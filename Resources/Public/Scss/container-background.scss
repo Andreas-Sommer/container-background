@@ -2,8 +2,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.parallax.parallax-fixed {
+  background-attachment: fixed;
+}
 
-  &.parallax-fixed {
-    background-attachment: fixed;
+@supports (-webkit-touch-callout: none) {
+  .parallax.parallax-fixed {
+    background-attachment: scroll;
   }
 }
